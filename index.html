@@ -1,0 +1,368 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mercedes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<script defer src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    anime({
+      targets: '.header__nav-img',
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: 500
+    });
+
+
+    anime({
+      targets: '.logo__img',
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: 700
+    });
+
+
+    anime({
+      targets: '.list__img',
+      translateY: [-50, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: (el, i) => 900 + 100 * i
+    });
+
+
+    anime({
+      targets: '.title',
+      translateY: [50, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: 1200
+    });
+
+
+    anime({
+      targets: '.title-descr',
+      translateY: [50, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: 1400
+    });
+
+    anime({
+      targets: '.header__content',
+      opacity: [0, 1],
+      duration: 2000,
+      easing: 'easeOutExpo'
+    });
+
+  });
+
+</script>
+
+<script defer>
+  document.addEventListener('scroll', function onScroll() {
+
+    const elementsToAnimate = [
+      '.section__title',
+      '.design__cell-text',
+      '.design__img',
+      '.premier__text',
+      '.premier__img',
+      '.concept__title',
+      '.concept__text',
+      '.concept__img',
+      '.video',
+      '.footer__link',
+      '.design-slider-item',
+      '.design__box-text',
+      '.design-box__column',
+      '.design-end'
+    ];
+
+    elementsToAnimate.forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+
+      elements.forEach(el => {
+        if (!el.classList.contains('animated')) {
+          const rect = el.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+          if (rect.top <= windowHeight && rect.bottom >= 0) {
+            el.classList.add('animated');
+
+            anime({
+              targets: el,
+              opacity: [0, 1],
+              translateY: [50, 0],
+              duration: 1000,
+              easing: 'easeOutExpo'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<header class="header">
+  <div class="container">
+    <div class="header__top">
+      <button class="header__nav">
+        <img class="header__nav-img" src="img/menu-btv.svg" alt="menu button">
+      </button>
+      <a href="#" class="logo">
+        <img class="logo__img" src="img/logo.svg" alt="logo">
+      </a>
+      <ul class="list">
+        <li class="list__item">
+          <a href="#" class="list__link">
+            <img class="list__img" src="img/Twitter.svg" alt="">
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="#" class="list__link">
+            <img class="list__img" src="img/Google.svg" alt="">
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="#" class="list__link">
+            <img class="list__img" src="img/Facebook.svg" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header__content">
+    <h1 class="title">The VISION AVTR</h1>
+    <p class="title-descr">Inspired by the future
+    </p>
+  </div>
+</header>
+<section class="concept">
+  <div class="container">
+    <div class="concept__inner">
+      <h3 class="concept__title section__title">
+        concept
+      </h3>
+      <p class="concept__text">
+        Electromobility in harmony with man and nature. Eco-friendly organic battery technology and
+        the sophisticated operating strategy of the VISION AVTR concept car.
+      </p>
+      <div class="img__container">
+        <img src="img/concept.jpg" alt="" class="concept__img">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="premier">
+  <div class="container">
+    <div class="premier__inner">
+      <div class="premier__column">
+        <h3 class="section__title">
+          Premier
+        </h3>
+        <p class="premier__text">
+          At CES 2020, a new concept Mercedes-Benz was presented - VISION AVTR. Futuristic
+          The concept of the presented electric car unites man, nature and the car in a unique way.
+        </p>
+        <p class="premier__text">
+          Ola Källenius, Chairman of the Board of Management of Daimler AG and Mercedes-Benz AG, presented in his speech
+          concept car with Academy Award winner and Avatar creator James Cameron.
+        </p>
+        <p class="premier__text">
+          It was the philosophy created by the cult director in the science fiction film that became the basis for the
+          creation of VISION AVTR.
+        </p>
+        <img class="premier__img" src="img/premier-1.jpg" alt="">
+        <button class="main__btn">More</button>
+      </div>
+      <div class="premier__column">
+        <img class="premier__img-right" src="img/premier-2.png" alt="">
+        <p class="premier__text">
+          “Mercedes-Benz has always been one of the most technologically advanced premium brands. Now it's time to unite
+          luxury and environmental friendliness. After all, this is the only way we can meet the standards of the
+          future.”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="video">
+  <div class="container">
+
+  </div>
+  <img src="img/video.png" alt="" class="video__png">
+  <button class="main__btn play__btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="23" viewBox="0 0 19 23" fill="none">
+      <path d="M19 11.5L0.25 22.3253L0.25 0.674683L19 11.5Z" fill="#F402A2"/>
+    </svg>
+    <span>PLAY VIDEO</span>
+  </button>
+</div>
+
+<section class="design">
+  <div class="container">
+    <div class="design__interior">
+      <div class="design__cell-one">
+        <h3 class="section__title">
+          INTERIOR & EXTERIOR
+        </h3>
+        <p class="design__cell-text">VISION AVTR design – the epitome of environmental friendliness
+        </p>
+        <p class="design__cell-text">The innovative VISION AVTR concept combines environmentally friendly interaction
+          interior, exterior and UX design. The entire design process was focused on a specific result -
+          a unique experience of interaction and perception of the concept car by the driver and passengers. It was
+          about creating
+          a unique space in which passengers have a biometric connection with each other, with the transport
+          means and the surrounding world.
+        </p>
+        <p class="design__cell-text">The side outer hole passes through the inner part and creates an endless
+          a loop inspired by the sacred connection between the Na'vi people in the film Avatar and their natural
+          environment
+          a habitat. </p>
+        <p class="design__cell-text">Also, thanks to the elongated "One Bow" design and organic design philosophy,
+          The VISION AVTR represents a radically new stage in automotive technology. Thus, having gone from the concept
+          awareness to the unique fusion of man and car, Mercedes-Benz engineers managed to create
+          concept electric car VISION AVTR.
+        </p>
+      </div>
+      <img src="img/design-1.jpg" alt="" class="design__img">
+      <div class="design__cell-two">
+        <p class="design__cell-text">
+          A laconic continuation of the external minimalist design are the front seats, made in a very
+          organic form that resembles leafy hammocks from the planet Pandora. The center console symbolizes
+          The Tree of Souls, the most sacred place of the Na'vi. The control unit is intuitive and incredibly
+          functional.
+        </p>
+      </div>
+      <div class="design__cell-three">
+        <img src="img/design-2.png" alt="" class="design__img">
+      </div>
+    </div>
+  </div>
+  <div class="design-slider">
+    <img src="img/slider-1.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-2.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-3.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-4.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-1.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-2.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-3.jpg" alt="" class="design-slider-item">
+    <img src="img/slider-4.jpg" alt="" class="design-slider-item">
+  </div>
+
+  <div class="design__box">
+    <div class="design__box-column">
+      <p class="design__box-text">In addition, the control center is located in such a way that it is easily accessible
+        for both driver and passenger, as well as for rear passengers. </p>
+      <p class="design__box-text">Thus, VISION AVTR establishes a close biometric connection with the driver and
+        Helps increase awareness of the surrounding situation.
+      </p>
+
+    </div>
+    <div class="design-box__column">
+      <p class="design__box-text">The back of the seats and the interior of the roof are made of special fabric,
+        which changes color. Depending on the lighting, textiles can be dark blue or delicate light blue
+        colors. </p>
+      <p class="design__box-text">But besides this, the environmental friendliness of the electric car interior is
+        increased with the help of vegetarian
+        DINAMICA® leather – the first and only microfiber that guarantees environmental performance for
+        throughout the entire production cycle.</p>
+      <p class="design__box-text">DINAMICA® is recycled material from old clothes, fabrics and plastics
+        PET bottles.</p>
+    </div>
+  </div>
+  <img src="img/design-end.png" alt="" class="design-end">
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="#" class="footer__link">
+        Privacy Policy
+      </a>
+      <a href="#" class="footer__logo">
+        <img class="logo__img" src="img/logo.svg" alt="logo">
+      </a>
+      <ul class="list">
+        <li class="list__item">
+          <a href="#" class="list__link">
+            <img class="list__img" src="img/Twitter.svg" alt="Twitter">
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="#" class="list__link">
+            <img class="list__img" src="img/Google.svg" alt="Google">
+          </a>
+        </li>
+        <li class="list__item">
+          <a href="#" class="list__link">
+            <img class="list__img" src="img/Facebook.svg" alt="Facebook">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Add your site or application content here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
